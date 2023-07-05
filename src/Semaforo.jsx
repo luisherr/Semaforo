@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import './semaforo.css'
 
 const Semaforo = () => {
-  const [active, setActive ] = useState('red')
+  const [active, setActive ] = useState('green')
 
   useEffect(() => {
     const intervalo = setInterval(() => {
@@ -16,7 +16,7 @@ const Semaforo = () => {
           case 'green':
             return 'yellow';
           default:
-            return 'red';
+            return 'green';
         }
       })
     }, 2000)
@@ -25,9 +25,9 @@ const Semaforo = () => {
 
   return (
     <div className='semaforo'> 
-      <div className={`light green ${active === 'green' ? 'active' : ''}`}>1</div>
-      <div className={`light yellow ${active === 'yellow' ? 'active' : ''}`}>2</div>
-      <div className={`light red ${active === 'red' ? 'active' : ''}`}>3</div>
+      <div className={`light green ${active === 'green' ? 'active' : 'inactive'}`}>Verde</div>
+      <div className={`light yellow ${active === 'yellow' ? 'active' : 'inactive'}`}>Amarillo</div>
+      <div className={`light red ${active === 'red' ? 'active' : 'inactive'}`}>Rojo</div>
     </div>
   )
 }
