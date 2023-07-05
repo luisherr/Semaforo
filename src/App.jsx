@@ -1,8 +1,11 @@
-function App() {
+import Semaforo from "./Semaforo"
 
+function App() {
   return (
-    <div>Hi world</div>
+    <div className="App">
+      <Semaforo />
+    </div>
   )
 }
 
-export default App
+export default App;
